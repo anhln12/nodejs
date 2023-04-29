@@ -30,3 +30,34 @@ make install
 ```
 node --version
 ```
+
+# Install Yarn on CentOS 7
+1. If you don't have Node.js installed on your system, you need to enable the Nodesource repository with the following curl command:
+```
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+```
+2. After that, install the Node.js package using the following command:
+```
+yum install nodejs
+```
+
+3. There is consistent maintenance of the official Yarn repository. It further, provides the most up-to-date version. To enable the Yarn repository and import the repository’s GPG key, run the below commands:
+```
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
+```
+4. After the addition of the repository, install Yarn by running the following command:
+```
+yum install yarn
+```
+5. Now, run the below command to confirm if yarn is installed successfully:
+```
+yarn --version
+```
+
+# Install pm2 on CentOS 7
+```
+yum install npm
+npm install pm2 -g
+pm2 status
+```
